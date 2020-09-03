@@ -9,6 +9,113 @@
   <project_license>CECILL-C</project_license>
   <updatecontact>hub_AT_figuiere.net</updatecontact>
   <releases>
+    <release date="2020-09-03" version="2.9.2">
+      <description>
+        <p>New features</p>
+        <ul>
+          <li>New plug-in filter Artistic / Doodle creates doodles from input photographs.</li>
+          <li>
+            New native command mproj (stands for matrix projection)
+            computes the projection of a matrix into a prescribed
+            dictionnary (defined as another matrix), with the choice
+            of various projection methods : ortho-projection, matching
+            pursuit, and orthogonal matching pursuit. Useful stuff for
+            sparse dictionnary learning. Math evaluator gets an
+            equivalent mproj() function as well.
+          </li>
+          <li>
+            New pre-defined variables in and in#ind return the L2-norm
+            of respectively current image and image #ind, viewed as
+            vectors or matrices (in that case, the Frobenius
+            norm). Corresponding function in(_#ind) does the same for
+            images with dynamic content (e.g. images under
+            modification).
+          </li>
+          <li>
+            New commands xyz2jzazbz, rgb2jzazbz, jzazbz2xyz and
+            jzazbz2rgb convert RGB or XYZ colors to the Jzazbz
+            colorspace (and vice-versa). Code for these commands has
+            been borrowed from this page 2 by Alan Gibson (@snibgo).
+          </li>
+        </ul>
+        <p>Improvements / Modifications</p>
+        <ul>
+          <li>
+            Remove support for deprecated double-hyphen prefix
+            (--command). Use +command instead.
+          </li>
+          <li>
+            A few internal functions for matrix calculus have been
+            better parallelized, when applied on large matrices
+            (multiplication, norm, dot product, …).
+          </li>
+          <li>
+            Command invert accepts an optional argument to choose
+            between different solver for matrix inversion (can be
+            0=SVD or 1=LU). SVD solver is slower for large matrices,
+            but less numerically instable. Math evaluator functions
+            invert() and pseudoinvert() also gets this optional
+            argument.
+          </li>
+          <li>
+            Commands fill and eval better manage auto- or forced
+            parallelization when image has a few columns.
+          </li>
+          <li>
+            Commands solve, invert, svd, trisolve and blur : use
+            double precision for computation.
+          </li>
+          <li>
+            Command object3d: Add modification in a 3D object format
+            to define a perfect sphere primitive from a pair
+            (center,point), rather than specifying it only with its
+            diameter (point1,point2).
+          </li>
+          <li>
+            Command +echo is now implemented as a native command (faster).
+          </li>
+          <li>
+            Command echo better manages messages starting with CR character.
+          </li>
+          <li>
+            Commands discard and split : When possible, preserve
+            principal axis of processed images.
+          </li>
+          <li>
+            Command label: Change output behavior in order to manage
+            multi-channels input images, and output always a
+            single-channel label image even when a multi-spectral
+            input image is given.
+          </li>
+          <li>
+            Command label: New argument to choose between L1 and
+            L2-norms for tolerance comparisons.
+          </li>
+          <li>
+            Function transp(), inv() and pseudoinv() have been renamed
+            respectively as transpose(), invert() and pseudoinvert()
+            to be more coherent with the name of the corresponding
+            pipeline commands.
+          </li>
+          <li>
+            Remove useless command unrepeat (eq. to discard without arguments).
+          </li>
+          <li>
+            Add illuminant E as a possible choice for color conversion
+            commands involving the XYZ colorspace. Set it as default
+            illuminant when no explicit illuminant is specified.
+          </li>
+        </ul>
+        <p>Bugfix</p>
+        <ul>
+          <li>Math evaluator: Fix possibly wrong pointer in call to delete.</li>
+          <li>Command solve: Fix compilation issue when Lapack support is enabled.</li>
+          <li>Filter Apply External CLUT: Implement Strength control.</li>
+          <li>Fix command colormap, for some degenerated cases.</li>
+          <li>Fix possible canvas shift when applying a filter inside a selection.</li>
+        </ul>
+      </description>
+    </release>
     <release date="2020-06-10" version="2.9.1"/>
   </releases>
 ​</component>
