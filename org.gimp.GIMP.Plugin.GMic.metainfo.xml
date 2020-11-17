@@ -9,6 +9,96 @@
   <project_license>CECILL-C</project_license>
   <updatecontact>hub_AT_figuiere.net</updatecontact>
   <releases>
+    <release date="2020-11-16" version="2.9.3">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>[gmic-qt-293] New filter Patterns / Random Pattern
+          renders an image containing a random pattern, based on a
+          random complex-valued function generator. Associated command
+          random_pattern has been added in the G’MIC stdlib as
+          well.</li>
+          <li>[gmic-qt-293] New filter Degradations / Rebuild From
+          Blocs. It subdivides an image into blocs, and replace each
+          bloc by the most similar bloc found in the set of other
+          blocs.</li>
+          <li>[gmic-qt-293] New filter: Degradations / Blur
+          [Multidirectional].</li>
+          <li>[gmic-qt_293] New translation system has been set up to
+          allow translations of all filter widgets, rather than just
+          the interface widgets.</li>
+          <li>[stdlib-293] New command display_camera (shortcut: dc)
+          opens a simple interactive webcam viewer.</li>
+          <li>[math-core-293] New function expr('formula',_w,_h,_d,_s)
+          outputs a vector of size w*h*d*s with values generated from
+          the specified formula, as if one were filling an image with
+          dimensions (w,h,d,s).</li>
+          <li>[math-core-293] New function get('varname',_size)
+          returns the value of the specified variable, as a vector of
+          size values, or as a scalar (if size is zero, or not
+          specified).</li>
+          <li>[math-core-293] New function arg0() which is basically
+          the same as arg() but with the argument index starting from
+          0 rather than 1.</li>
+          <li>[stdlib-293] New command parse_cli is a parser of .gmic
+          files that extracts the description of the #@cli commands
+          and outputs them in various formats.</li>
+          <li>[stdlib-293] New documentation generator
+          implemented. Reference documentation is more flexible and
+          can be now written with a light Markdown-like syntax (gmd,
+          for G’MIC Markdown). New commands to convert gmd to html or
+          ascii outputs have been set up.</li>
+        </ul>
+        <p>Improvements / Modifications:</p>
+        <ul>
+          <li>[gmic-qt-293] Default choice for confirmation dialog
+          appearing when suppressing a Fave filter is now set to
+          Yes.</li>
+          <li>[core-293] External calls to ImageMagick’s convert are
+          better managed on Windows, when filename or path contain
+          spaces or UTF-8 characters.</li>
+          <li>[core-293] Command text : improvement of character
+          spacing rules.</li>
+          <li>[core-293] Command resize: Argument list as
+          [image],_interpolation,_boundary_conditions,_ax,_ay,_az,_ac
+          is not permitted anymore, because it can be ambiguous
+          compared to
+          [image],_height,_depth,_spectrum,_interpolation,_boundary_conditions,_ax,_ay,_az,_ac. New
+          command resize_as_image (eq. to ri) replaces the use of the
+          deprecated argument list.</li>
+          <li>[core-293] Revert back on the behavior of commands
+          discard and split when invoked with a list of values as the
+          argument (i.e no specified axis). They don’t try to preserve
+          the geometry of the input images anymore (this was creating
+          annoying discontinuities in the behavior of these
+          commands).</li>
+          <li>[math-core-293] Function get() has now an additional
+          option to retrieve the variable value as a string rather
+          than as a value or a set of values.</li>
+          <li>[math-core-293] Complex functions cabs(), cconj(),
+          carg(), ccos(), csin(), ctan(), cexp(), clog(), ccosh(),
+          csinh() and ctanh() now accepts scalar-valued arguments (and
+          still returns complex numbers, i.e. vector2).</li>
+          <li>[stdlib-293] Command convolve_fft now accepts an
+          optional boundary_condition argument.</li>
+          <li>[compiling-293] Compilation environment on Windows has
+          been rebuilt from scratch. It now uses a recent version of
+          the g++ compiler (and 3rd-party libs), and Link-Time
+          Optimization is now enabled when compiling the G’MIC
+          binaries.</li>
+        </ul>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>Command +e and +warn: Avoid first undesired line-feed
+          character put on stdout.</li>
+          <li>Command convolve_fft has been recoded and is more
+          precise and fast now.</li>
+          <li>Fixed small bug in scope management that made some
+          specific sequences of flow commands not working as
+          expected.</li>
+        </ul>
+      </description>
+    </release>
     <release date="2020-09-03" version="2.9.2">
       <description>
         <p>New features</p>
