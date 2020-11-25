@@ -29,8 +29,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gmic.eu/files/source/gmic_2.9.3.tar.gz",
-                    "sha256": "eb55e75ac691d80f3a6a228bcf21ca5db064201b66aecde6d3ca5d1d8851f59b"
+                    "url": "https://gmic.eu/files/source/gmic_2.9.4.tar.gz",
+                    "sha256": "790bee48f496765f6b59067dfb10dc34e1eb576caf9a95f30af0d567026eacc7"
                 },
                 {
                     "type": "file",
