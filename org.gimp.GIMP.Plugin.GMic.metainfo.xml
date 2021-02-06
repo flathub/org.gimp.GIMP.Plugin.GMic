@@ -9,6 +9,98 @@
   <project_license>CECILL-C</project_license>
   <updatecontact>hub_AT_figuiere.net</updatecontact>
   <releases>
+    <release date="2021-02-05" version="2.9.5">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>[gmic-qt-295] New button “Copy G’MIC Command to Clipboard”
+          added, to make it easier getting the G’MIC command line
+          corresponding to the applied filter.</li>
+          <li>[gmic-qt-295] New filter Artistic / Ghost creates a ghost
+          effect from an input image.</li>
+          <li>[gmic-qt-295] New filter Colors / Tune HSV Colors allows
+          to finely remap HSV basis colors acording to the user’s
+          settings. Use complex CLUT reconstruction internally.</li>
+          <li>[gmic-qt-295] New filter “Rendering/Hypotrochoid”
+          renders hypotrochoid curves.</li>
+          <li>[gmic-qt-295] New filter "About/What’s New? " shows
+          recent modifications of the plug-in filters (new or
+          removed).</li>
+          <li>[core-295] New command output_obj that saves a 3D object
+          into a Wavefront .obj file (something that Blender can import
+          easily).</li>
+          <li>[core-295] Input/output of .raw, .cimg and .cimgz data
+          files now accept bool as a possible type. In that case, the
+          image data are stored using a bitwise format.</li>
+          <li>[math-core-295] New function addr(expr) returns the
+          internal pointer address to the specified expression
+          expr.</li>
+        </ul>
+        <p>Improvements / Modifications:</p>
+        <ul>
+          <li>[core-295] Command interpreter has been slightly optimized:
+          <ul>
+            <li>Debug info are not included by default anymore when
+            reading a command file;</li>
+            <li>Checking the validity of the interpreter state is now
+            done only in debug mode.</li>
+            <li>Static analyzer determines if item substitution can be
+            skipped for some items.</li>
+            <li>Added more memory slots to store variables, leading to
+            less string comparisons when accessing a variable value, in
+            case many variables are defined.</li>
+          </ul>
+          </li>
+          <li>[core-295] Native commands that define default arguments
+          now accepts , as an argument (just as with custom
+          commands).</li>
+          <li>[core-295] Command split3d has a different argument
+          full_split which allows to enable splitting of 3D object
+          primitives as single images in the resulting list.</li>
+          <li>[core-295] File options, if any specified, are now passed
+          to custom commands input_ext and output_ext.</li>
+          <li>[core-295] New pre-defined variables $_os, $_flags,
+          $_pixeltype give additional information on G’MIC interpreter
+          and its running environment.</li>
+          <li>[stdlib-295] Commands replace_str and replace_seq slightly
+          optimized.</li>
+        </ul>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>[stdlib-295] Command display: Fix “shaking aspect ratio”
+          bug happening when visualizing small images.</li>
+          <li>[math-core-295] Fixed user assignment of reserved variable
+          in.</li>
+          <li>[math-core-295] Fixed wrong behavior of expression v[ind]
+          = value, when v was a pre-defined variable (as ia, ic, in,
+          …).</li>
+          <li>[core-295] Command svd: check that specified selected
+          images are indeed matrices (no depth or multiple
+        channels).</li>
+        </ul>
+      </description>
+    </release>
+    <release date="2020-11-24" version="2.9.4">
+      <description>
+        <p>Improvements / Modifications:</p>
+        <ul>
+          <li>[math-core-294] Function sort() can be now applied only
+          on a subset of the input vector.</li>
+          <li>[core-294] Avoid
+          compilation warning in function CImgList&lt;T&gt;::font(),
+          with g++ &gt;=v.10.</li>
+        </ul>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>[core-294] Fix invalid memory read that could happen in
+          function gmic::add_commands().</li>
+          <li>[core-294] Fix invalid memory read that could happen in
+          command uncommand.</li>
+          <li>[core-294] Fix null pointer indirection that could
+          happen in function gmic::run().</li>
+        </ul>
+      </description>
+    </release>
     <release date="2020-11-16" version="2.9.3">
       <description>
         <p>New features:</p>
