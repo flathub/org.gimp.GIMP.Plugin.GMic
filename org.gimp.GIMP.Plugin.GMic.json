@@ -1,16 +1,16 @@
 {
     "id": "org.gimp.GIMP.Plugin.GMic",
-    "branch": "2-40",
+    "branch": "3",
     "runtime": "org.gimp.GIMP",
-    "runtime-version": "stable",
+    "runtime-version": "beta",
     "sdk": "org.gnome.Sdk//40",
     "build-extension": true,
     "appstream-compose": false,
     "build-options": {
-        "prefix": "/app/extensions/GMic",
-        "prepend-path": "/app/extensions/GMic/bin",
-        "prepend-pkg-config-path": "/app/extensions/GMic/lib/pkgconfig",
-        "prepend-ld-library-path": "/app/extensions/GMic/lib"
+        "prefix": "/app/extensions/plug-ins/GMic",
+        "prepend-path": "/app/extensions/plug-ins/GMic/bin",
+        "prepend-pkg-config-path": "/app/extensions/plug-ins/GMic/lib/pkgconfig",
+        "prepend-ld-library-path": "/app/extensions/plug-ins/GMic/lib"
     },
     "modules": [
         "qt5.json",
@@ -19,18 +19,41 @@
             "buildsystem": "cmake-ninja",
             "no-make-install": true,
             "subdir": "gmic-qt",
+            "config-opts": [
+                "-DGMIC_QT_HOST=gimp3",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
             "post-install": [
-                "install -d ${FLATPAK_DEST}/plug-ins/",
-                "install -Dm755 gmic_gimp_qt ${FLATPAK_DEST}/plug-ins/",
+                "install -Dm755 -T gmic_gimp_qt ${FLATPAK_DEST}/GMic",
                 "install -Dm644 --target=${FLATPAK_DEST}/share/metainfo/ ../org.gimp.GIMP.Plugin.GMic.metainfo.xml",
                 "appstream-compose --basename=org.gimp.GIMP.Plugin.GMic --prefix=${FLATPAK_DEST} --origin=flatpak org.gimp.GIMP.Plugin.GMic",
                 "install -Dm644 -t $FLATPAK_DEST/share/licenses/gmic COPYING"
             ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://gmic.eu/files/source/gmic_2.9.6.tar.gz",
-                    "sha256": "d22fe8515af16dcd050d09a0bc7127ec29f4795ce732a0c6c3eaf839356bc11a"
+                    "type": "git",
+                    "url": "https://github.com/dtschump/gmic.git",
+                    "commit": "a274356257f2b919c9f06b35640c03b2c843a0c9",
+                    "dest": "gmic"
+                },
+                {
+                    "type": "file",
+                    "url": "https://github.com/dtschump/CImg/raw/044682e094aa3f16aa809f6a9809cfc0f09e60d9/CImg.h",
+                    "sha256": "c350617961f45e1f2981f57c11b4b45602c2fdb88f9fe9cccf7b446e6609a1d6",
+                    "dest": "gmic/src"
+                },
+                {
+                    "type": "file",
+                    "url": "https://gmic.eu/gmic_stdlib297.h",
+                    "sha256": "b84a3f6bbb6b34afc3c54d5281e75f73b97ac08de19ea3931d296ffe0e6fe98a",
+                    "dest": "gmic/src",
+                    "dest-filename": "gmic_stdlib.h"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/c-koi/gmic-qt.git",
+                    "commit": "56a0658079462af95b17af5cb2fd50ebbad74792",
+                    "dest": "gmic-qt"
                 },
                 {
                     "type": "file",
