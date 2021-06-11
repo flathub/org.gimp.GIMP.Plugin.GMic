@@ -31,9 +31,29 @@
             ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://gmic.eu/files/source/gmic_2.9.7.tar.gz",
-                    "sha256": "942537487ea722141230579db3cd4331368429c0e33cb38fee1b17aae9557f16"
+                    "type": "git",
+                    "url": "https://github.com/dtschump/gmic.git",
+                    "commit": "b7b2ae515ac47412f829b973ca1e52156411d2d6",
+                    "dest": "gmic"
+                },
+                {
+                    "type": "file",
+                    "url": "https://github.com/dtschump/CImg/raw/f5ff164b6f14c6039fd0c8df51318a722fa70e28/CImg.h",
+                    "sha256": "50235043247364bf168be2aa8b5ec7717c52b4f4457c43f343113c8f5c78ac2a",
+                    "dest": "gmic/src"
+                },
+                {
+                    "type": "file",
+                    "url": "https://gmic.eu/gmic_stdlib298.h",
+                    "sha256": "ab95604bda45bfc129109a47280bd179c21ba1a48683a29dc266b0b3587d843b",
+                    "dest": "gmic/src",
+                    "dest-filename": "gmic_stdlib.h"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/c-koi/gmic-qt.git",
+                    "commit": "d4eeb4f62f5e8ff9344ce72eda3b3ac9ba4bbb4a",
+                    "dest": "gmic-qt"
                 },
                 {
                     "type": "file",
