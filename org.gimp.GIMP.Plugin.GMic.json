@@ -21,7 +21,7 @@
             "subdir": "gmic-qt",
             "config-opts": [
                 "-DGMIC_QT_HOST=gimp3",
-                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+                "-DCMAKE_BUILD_TYPE=Release"
             ],
             "post-install": [
                 "install -Dm755 -T gmic_gimp_qt ${FLATPAK_DEST}/GMic",

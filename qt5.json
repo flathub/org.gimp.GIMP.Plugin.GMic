@@ -125,7 +125,20 @@
         {
             "name": "qt5-wayland",
             "buildsystem": "qmake",
+            "cleanup": [
+                "/bin",
+                "/include",
+                "/lib/cmake",
+                "/lib/mkspecs",
+                "/lib/pkgconfig",
+                "*.la"
+            ],
             "cleanup-platform": [ "/bin", "/mkspecs" ],
+            "post-install": [
+                "strip ${FLATPAK_DEST}/lib/plugins/wayland-*/*.so",
+                "strip ${FLATPAK_DEST}/lib/plugins/platforms/libqwayland*.so",
+                "strip ${FLATPAK_DEST}/lib/libQt5Wayland*.so.5.14.2"
+            ],
             "sources": [
                 {
                     "type": "archive",
