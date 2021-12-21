@@ -49,7 +49,7 @@
                 }
             },
             "post-install": [
-                "strip ${FLATPAK_DEST}/lib/*.so.5.14.2",
+                "strip ${FLATPAK_DEST}/lib/*.so.5.*",
                 "strip ${FLATPAK_DEST}/lib/plugins/*/*.so"
             ],
             "config-opts": [ "-confirm-license", "-opensource",
@@ -83,9 +83,9 @@
                            ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "http://download.qt.io/archive/qt/5.14/5.14.2/submodules/qtbase-everywhere-src-5.14.2.tar.xz",
-                    "sha256": "48b9e79220941665a9dd827548c6428f7aa3052ccba8f4f7e039a94aa1d2b28a"
+                    "type": "git",
+                    "url": "https://invent.kde.org/qt/qt/qtbase.git",
+                    "commit": "7c6c0030cf80ef7b9ace42996b0e0c3a72f76860"
                 },
                 {
                     "type": "patch",
@@ -98,15 +98,17 @@
                 {
                     "//TODO": "Temporary fix for https://github.com/flatpak/flatpak/issues/3397.",
                     "type": "patch",
-                    "path": "patch/qtbase-revert-correct-handling-for-xdg-runtime-dir.patch"
+                    "path": "patch/qtbase-revert-qstandardpaths-dont-change-permissions-on-xdg-runtime-dir.patch"
                 },
                 {
                     "type": "patch",
-                    "path": "patch/qtbase-make-sure-to-correctly-construct-base-platform-theme.patch"
+                    "path": "patch/qtbase-filechooser-portal-send-window-id-in-hex.patch"
                 },
                 {
                     "type": "shell",
-                    "commands": [ "mv configure configure.qt" ]
+                    "commands": [
+                        "mv configure configure.qt"
+                    ]
                 },
                 {
                     "type": "script",
@@ -121,9 +123,9 @@
     ],
     "sources": [
         {
-            "type": "archive",
-            "url": "http://download.qt.io/archive/qt/5.14/5.14.2/submodules/qttools-everywhere-src-5.14.2.tar.xz",
-            "sha256": "5bb0cf7832b88eb6bc9d4289f98307eb14b16a453ad6cf42cca13c4fe1a053c5"
+            "type": "git",
+            "url": "https://invent.kde.org/qt/qt/qttools.git",
+            "commit": "33693a928986006d79c1ee743733cde5966ac402"
         }
     ]
 }
