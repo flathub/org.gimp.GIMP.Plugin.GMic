@@ -3,7 +3,7 @@
     "branch": "2-40",
     "runtime": "org.gimp.GIMP",
     "runtime-version": "stable",
-    "sdk": "org.gnome.Sdk//41",
+    "sdk": "org.gnome.Sdk//42",
     "build-extension": true,
     "appstream-compose": false,
     "build-options": {
