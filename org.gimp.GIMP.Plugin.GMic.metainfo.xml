@@ -9,6 +9,7 @@
   <project_license>CECILL-C</project_license>
   <updatecontact>hub_AT_figuiere.net</updatecontact>
   <releases>
+    <release date="2022-04-26" version="3.1.0" />
     <release date="2022-01-19" version="3.0.2" />
     <release date="2022-01-13" version="3.0.1" />
     <release date="2021-12-09" version="3.0.0" />
