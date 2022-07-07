@@ -17,6 +17,9 @@
         {
             "name": "gmic",
             "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DENABLE_SYSTEM_GMIC=OFF"
+            ],
             "no-make-install": true,
             "subdir": "gmic-qt",
             "post-install": [
@@ -29,8 +32,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gmic.eu/files/source/gmic_3.1.4.tar.gz",
-                    "sha256": "6f4a9a5a476d0bed6099b7291450459689bfc0b102c90cf333eba4b7ab5d841a"
+                    "url": "https://gmic.eu/files/source/gmic_3.1.5.tar.gz",
+                    "sha256": "fa77e85b3a39638008515ac525f23f0ed7a45b63c463c0ba6292c87f5e88e30d"
                 },
                 {
                     "type": "file",
