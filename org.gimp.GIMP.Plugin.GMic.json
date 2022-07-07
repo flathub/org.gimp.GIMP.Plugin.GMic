@@ -17,6 +17,9 @@
         {
             "name": "gmic",
             "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DENABLE_SYSTEM_GMIC=OFF"
+            ],
             "no-make-install": true,
             "subdir": "gmic-qt",
             "config-opts": [
