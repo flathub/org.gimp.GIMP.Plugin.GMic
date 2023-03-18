@@ -89,20 +89,12 @@
                 },
                 {
                     "type": "patch",
-                    "path": "patch/qtbase-avoid-hardcoding-kernel-version.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "patch/qtbase-use-wayland-on-gnome.patch"
-                },
-                {
-                    "//TODO": "Temporary fix for https://github.com/flatpak/flatpak/issues/3397.",
-                    "type": "patch",
-                    "path": "patch/qtbase-revert-qstandardpaths-dont-change-permissions-on-xdg-runtime-dir.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "patch/qtbase-filechooser-portal-send-window-id-in-hex.patch"
+                    "paths": [
+                        "patches/qtbase-avoid-hardcoding-kernel-version.patch",
+                        "patches/qtbase-use-wayland-on-gnome.patch",
+                        "patches/qtbase-revert-qstandardpaths-dont-change-permissions-on-xdg-runtime-dir.patch",
+                        "patches/qtbase-filechooser-portal-send-window-id-in-hex.patch"
+                    ]
                 },
                 {
                     "type": "shell",

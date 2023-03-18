@@ -23,17 +23,27 @@
             "no-make-install": true,
             "subdir": "gmic-qt",
             "post-install": [
-                "install -d ${FLATPAK_DEST}/plug-ins/",
-                "install -Dm755 gmic_gimp_qt ${FLATPAK_DEST}/plug-ins/",
-                "install -Dm644 --target=${FLATPAK_DEST}/share/metainfo/ ../org.gimp.GIMP.Plugin.GMic.metainfo.xml",
+                "install -Dm755 gmic_gimp_qt -t ${FLATPAK_DEST}/plug-ins/",
+                "install -Dm644 ../org.gimp.GIMP.Plugin.GMic.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo/",
                 "appstream-compose --basename=org.gimp.GIMP.Plugin.GMic --prefix=${FLATPAK_DEST} --origin=flatpak org.gimp.GIMP.Plugin.GMic",
                 "install -Dm644 -t $FLATPAK_DEST/share/licenses/gmic COPYING"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gmic.eu/files/source/gmic_3.2.1.tar.gz",
-                    "sha256": "95881919b2e94de502abade0472d27535f7cfa9d17741d8dc0a6b13d4152c175"
+                    "url": "https://gmic.eu/files/source/gmic_3.2.2.tar.gz",
+                    "sha256": "c747496c8eece456f0e3404daca1b99ee94ddb694770970f220e2a62de803a58"
+                },
+                {
+                    "type": "patch",
+                    "options": [
+                        "-d",
+                        "gmic-qt"
+                    ],
+                    "paths": [
+                        "patches/gmic-build.patch",
+                        "patches/gmic-build-host.patch"
+                    ]
                 },
                 {
                     "type": "file",
