@@ -31,19 +31,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gmic.eu/files/source/gmic_3.2.2.tar.gz",
-                    "sha256": "c747496c8eece456f0e3404daca1b99ee94ddb694770970f220e2a62de803a58"
-                },
-                {
-                    "type": "patch",
-                    "options": [
-                        "-d",
-                        "gmic-qt"
-                    ],
-                    "paths": [
-                        "patches/gmic-build.patch",
-                        "patches/gmic-build-host.patch"
-                    ]
+                    "url": "https://gmic.eu/files/source/gmic_3.2.3.tar.gz",
+                    "sha256": "c8444f0aae428a5ed555ddd809c9a4b144b4c9bb29f81057393893c34b1ac0e4"
                 },
                 {
                     "type": "file",
