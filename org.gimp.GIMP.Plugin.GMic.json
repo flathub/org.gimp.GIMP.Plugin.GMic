@@ -32,7 +32,13 @@
                 {
                     "type": "archive",
                     "url": "https://gmic.eu/files/source/gmic_3.2.5.tar.gz",
-                    "sha256": "ae1a903df27e3131702c27b6fea6bdd8faabd756f53e22d3f35fb790f22d2035"
+                    "sha256": "ae1a903df27e3131702c27b6fea6bdd8faabd756f53e22d3f35fb790f22d2035",
+                    "x-data-checker": {
+                        "type": "anitya",
+                        "project-id": 10217,
+                        "is-main-source": true,
+                        "url-template": "https://gmic.eu/files/source/gmic_$version.tar.gz"
+                    }
                 },
                 {
                     "type": "file",
