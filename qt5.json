@@ -49,7 +49,7 @@
                 }
             },
             "post-install": [
-                "strip ${FLATPAK_DEST}/lib/*.so.5.15.3",
+                "strip ${FLATPAK_DEST}/lib/*.so.5.*",
                 "strip ${FLATPAK_DEST}/lib/plugins/*/*.so"
             ],
             "config-opts": [ "-confirm-license", "-opensource",
@@ -82,30 +82,24 @@
                            ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.qt.io/archive/qt/5.15/5.15.3/submodules/qtbase-everywhere-opensource-src-5.15.3.tar.xz",
-                    "sha256": "26394ec9375d52c1592bd7b689b1619c6b8dbe9b6f91fdd5c355589787f3a0b6"
+                    "type": "git",
+                    "url": "https://invent.kde.org/qt/qt/qtbase.git",
+                    "commit": "7c6c0030cf80ef7b9ace42996b0e0c3a72f76860"
                 },
                 {
                     "type": "patch",
-                    "path": "patch/qtbase-avoid-hardcoding-kernel-version.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "patch/qtbase-use-wayland-on-gnome.patch"
-                },
-                {
-                    "//TODO": "Temporary fix for https://github.com/flatpak/flatpak/issues/3397.",
-                    "type": "patch",
-                    "path": "patch/qtbase-revert-qstandardpaths-dont-change-permissions-on-xdg-runtime-dir.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "patch/qt5base-c++.patch"
+                    "paths": [
+                        "patches/qtbase-avoid-hardcoding-kernel-version.patch",
+                        "patches/qtbase-use-wayland-on-gnome.patch",
+                        "patches/qtbase-revert-qstandardpaths-dont-change-permissions-on-xdg-runtime-dir.patch",
+                        "patches/qtbase-filechooser-portal-send-window-id-in-hex.patch"
+                    ]
                 },
                 {
                     "type": "shell",
-                    "commands": [ "mv configure configure.qt" ]
+                    "commands": [
+                        "mv configure configure.qt"
+                    ]
                 },
                 {
                     "type": "script",
@@ -145,9 +139,9 @@
     ],
     "sources": [
         {
-            "type": "archive",
-            "url": "http://download.qt.io/archive/qt/5.15/5.15.3/submodules/qttools-everywhere-opensource-src-5.15.3.tar.xz",
-            "sha256": "463b2fe71a085e7ab4e39333ae360ab0ec857b966d7a08f752c427e5df55f90d"
+            "type": "git",
+            "url": "https://invent.kde.org/qt/qt/qttools.git",
+            "commit": "33693a928986006d79c1ee743733cde5966ac402"
         }
     ]
 }
