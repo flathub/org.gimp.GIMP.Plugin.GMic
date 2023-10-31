@@ -3,7 +3,7 @@
     "branch": "3",
     "runtime": "org.gimp.GIMP",
     "runtime-version": "beta",
-    "sdk": "org.gnome.Sdk//42",
+    "sdk": "org.gnome.Sdk//45",
     "build-extension": true,
     "appstream-compose": false,
     "build-options": {
@@ -28,16 +28,22 @@
                 "-DCMAKE_BUILD_TYPE=Release"
             ],
             "post-install": [
-                "install -Dm755 -T gmic_gimp_qt ${FLATPAK_DEST}/GMic",
-                "install -Dm644 --target=${FLATPAK_DEST}/share/metainfo/ ../org.gimp.GIMP.Plugin.GMic.metainfo.xml",
+                "install -Dm755 gmic_gimp_qt -t ${FLATPAK_DEST}/GMic",
+                "install -Dm644  ../org.gimp.GIMP.Plugin.GMic.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo/",
                 "appstream-compose --basename=org.gimp.GIMP.Plugin.GMic --prefix=${FLATPAK_DEST} --origin=flatpak org.gimp.GIMP.Plugin.GMic",
                 "install -Dm644 -t $FLATPAK_DEST/share/licenses/gmic COPYING"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gmic.eu/files/source/gmic_3.1.5.tar.gz",
-                    "sha256": "fa77e85b3a39638008515ac525f23f0ed7a45b63c463c0ba6292c87f5e88e30d"
+                    "url": "https://gmic.eu/files/source/gmic_3.3.1.tar.gz",
+                    "sha256": "4ba6558cd6cf15483ad56285408eaf5e88952a4ac0f356a3bf514c7a7bb426ac",
+                    "x-data-checker": {
+                        "type": "anitya",
+                        "project-id": 10217,
+                        "is-main-source": true,
+                        "url-template": "https://gmic.eu/files/source/gmic_$version.tar.gz"
+                    }
                 },
                 {
                     "type": "file",
