@@ -28,7 +28,7 @@
                 "-DCMAKE_BUILD_TYPE=Release"
             ],
             "post-install": [
-                "install -Dm755 gmic_gimp_qt -t ${FLATPAK_DEST}/GMic",
+                "install -Dm755 gmic_gimp_qt ${FLATPAK_DEST}/GMic",
                 "install -Dm644  ../org.gimp.GIMP.Plugin.GMic.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo/",
                 "appstream-compose --basename=org.gimp.GIMP.Plugin.GMic --prefix=${FLATPAK_DEST} --origin=flatpak org.gimp.GIMP.Plugin.GMic",
                 "install -Dm644 -t $FLATPAK_DEST/share/licenses/gmic COPYING"
@@ -44,6 +44,14 @@
                         "is-main-source": true,
                         "url-template": "https://gmic.eu/files/source/gmic_$version.tar.gz"
                     }
+                },
+                {
+                    "type": "patch",
+                    "options": [
+                        "-d",
+                        "gmic-qt"
+                    ],
+                    "path": "patches/gmic-qt-gimp-api.patch"
                 },
                 {
                     "type": "file",
