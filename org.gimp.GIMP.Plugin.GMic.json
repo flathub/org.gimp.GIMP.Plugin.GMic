@@ -36,22 +36,14 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gmic.eu/files/source/gmic_3.3.1.tar.gz",
-                    "sha256": "4ba6558cd6cf15483ad56285408eaf5e88952a4ac0f356a3bf514c7a7bb426ac",
+                    "url": "https://gmic.eu/files/source/gmic_3.3.3.tar.gz",
+                    "sha256": "903937d6475878df1e2130eee32d1fd93c4597bd2ef7f94e1d9775da1839645d",
                     "x-data-checker": {
                         "type": "anitya",
                         "project-id": 10217,
                         "is-main-source": true,
                         "url-template": "https://gmic.eu/files/source/gmic_$version.tar.gz"
                     }
-                },
-                {
-                    "type": "patch",
-                    "options": [
-                        "-d",
-                        "gmic-qt"
-                    ],
-                    "path": "patches/gmic-qt-gimp-api.patch"
                 },
                 {
                     "type": "file",
