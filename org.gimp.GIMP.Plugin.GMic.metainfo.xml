@@ -7,8 +7,10 @@
   <url type="homepage">https://gmic.eu/</url>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>CECILL-C</project_license>
-  <updatecontact>hub_AT_figuiere.net</updatecontact>
+  <update_contact>hub_AT_figuiere.net</update_contact>
+  <developer_name>G'MIC developers</developer_name>
   <releases>
+    <release date="2024-02-19" version="3.3.4" />
     <release date="2024-01-12" version="3.3.3" />
     <release date="2023-10-05" version="3.3.1" />
     <release date="2023-09-04" version="3.3.0" />
@@ -61,18 +63,7 @@
         </ul>
         <p>Improvements / Modifications:</p>
         <ul>
-          <li>[core-295] Command interpreter has been slightly optimized:
-          <ul>
-            <li>Debug info are not included by default anymore when
-            reading a command file;</li>
-            <li>Checking the validity of the interpreter state is now
-            done only in debug mode.</li>
-            <li>Static analyzer determines if item substitution can be
-            skipped for some items.</li>
-            <li>Added more memory slots to store variables, leading to
-            less string comparisons when accessing a variable value, in
-            case many variables are defined.</li>
-          </ul>
+          <li>[core-295] Command interpreter has been slightly optimized
           </li>
           <li>[core-295] Native commands that define default arguments
           now accepts , as an argument (just as with custom
