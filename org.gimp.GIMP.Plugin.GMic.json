@@ -3,9 +3,8 @@
     "branch": "2-40",
     "runtime": "org.gimp.GIMP",
     "runtime-version": "stable",
-    "sdk": "org.gnome.Sdk//44",
+    "sdk": "org.gnome.Sdk//46",
     "build-extension": true,
-    "appstream-compose": false,
     "build-options": {
         "prefix": "/app/extensions/GMic",
         "prepend-path": "/app/extensions/GMic/bin",
@@ -25,7 +24,6 @@
             "post-install": [
                 "install -Dm755 gmic_gimp_qt -t ${FLATPAK_DEST}/plug-ins/",
                 "install -Dm644 ../org.gimp.GIMP.Plugin.GMic.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo/",
-                "appstream-compose --basename=org.gimp.GIMP.Plugin.GMic --prefix=${FLATPAK_DEST} --origin=flatpak org.gimp.GIMP.Plugin.GMic",
                 "install -Dm644 -t $FLATPAK_DEST/share/licenses/gmic COPYING"
             ],
             "sources": [
