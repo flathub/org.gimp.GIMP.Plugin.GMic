@@ -29,8 +29,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gmic.eu/files/source/gmic_3.3.6.tar.gz",
-                    "sha256": "9d2d07a39040ed6abacafd49c16e746520631a16dc9215b161d1dc3ed0dd23fe",
+                    "url": "https://gmic.eu/files/source/gmic_3.4.0.tar.gz",
+                    "sha256": "df6f087af3db935d5788f7fa20c4fc46a426991919db91853b0db1c9e7cd792a",
                     "x-data-checker": {
                         "type": "anitya",
                         "project-id": 10217,
