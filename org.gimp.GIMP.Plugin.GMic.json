@@ -3,9 +3,8 @@
     "branch": "3",
     "runtime": "org.gimp.GIMP",
     "runtime-version": "beta",
-    "sdk": "org.gnome.Sdk//45",
+    "sdk": "org.gnome.Sdk//47",
     "build-extension": true,
-    "appstream-compose": false,
     "build-options": {
         "prefix": "/app/extensions/plug-ins/GMic",
         "prepend-path": "/app/extensions/plug-ins/GMic/bin",
@@ -28,21 +27,22 @@
                 "-DCMAKE_BUILD_TYPE=Release"
             ],
             "post-install": [
-                "install -Dm755 gmic_gimp_qt ${FLATPAK_DEST}/GMic",
-                "install -Dm644  ../org.gimp.GIMP.Plugin.GMic.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo/",
-                "appstream-compose --basename=org.gimp.GIMP.Plugin.GMic --prefix=${FLATPAK_DEST} --origin=flatpak org.gimp.GIMP.Plugin.GMic",
+                "install -Dm755 gmic_gimp_qt -t ${FLATPAK_DEST}/",
+                "ln -sf gmic_gimp_qt ${FLATPAK_DEST}/GMic",
+                "install -Dm644 ../org.gimp.GIMP.Plugin.GMic.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo/",
                 "install -Dm644 -t $FLATPAK_DEST/share/licenses/gmic COPYING"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gmic.eu/files/source/gmic_3.3.3.tar.gz",
-                    "sha256": "903937d6475878df1e2130eee32d1fd93c4597bd2ef7f94e1d9775da1839645d",
+                    "url": "https://gmic.eu/get_file.php?file=source/gmic_3.5.0.tar.gz",
+                    "archive-type": "tar-gzip",
+                    "sha256": "847ddf438bbe73ec1447a8d98916571c75664bed050ac11212e45b2eb4c1cad0",
                     "x-data-checker": {
                         "type": "anitya",
                         "project-id": 10217,
                         "is-main-source": true,
-                        "url-template": "https://gmic.eu/files/source/gmic_$version.tar.gz"
+                        "url-template": "https://gmic.eu/get_file.php?file=source/gmic_$version.tar.gz"
                     }
                 },
                 {
