@@ -6,10 +6,10 @@
     "sdk": "org.gnome.Sdk//47",
     "build-extension": true,
     "build-options": {
-        "prefix": "/app/extensions/plug-ins/GMic",
-        "prepend-path": "/app/extensions/plug-ins/GMic/bin",
-        "prepend-pkg-config-path": "/app/extensions/plug-ins/GMic/lib/pkgconfig",
-        "prepend-ld-library-path": "/app/extensions/plug-ins/GMic/lib"
+        "prefix": "/app/extensions/GMic",
+        "prepend-path": "/app/extensions/GMic/bin",
+        "prepend-pkg-config-path": "/app/extensions/GMic/lib/pkgconfig",
+        "prepend-ld-library-path": "/app/extensions/GMic/lib"
     },
     "modules": [
         "qt5.json",
@@ -27,8 +27,7 @@
                 "-DCMAKE_BUILD_TYPE=Release"
             ],
             "post-install": [
-                "install -Dm755 gmic_gimp_qt -t ${FLATPAK_DEST}/",
-                "ln -sf gmic_gimp_qt ${FLATPAK_DEST}/GMic",
+                "install -Dm755 gmic_gimp_qt -t ${FLATPAK_DEST}/plug-ins/gmic_gimp_qt",
                 "install -Dm644 ../org.gimp.GIMP.Plugin.GMic.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo/",
                 "install -Dm644 -t $FLATPAK_DEST/share/licenses/gmic COPYING"
             ],
