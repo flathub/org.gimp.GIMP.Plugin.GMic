@@ -79,7 +79,7 @@
                 "-system-proxies",
                 "-gtk",
                 "-no-use-gold-linker",
-                "-archdatadir", "/app/extensions/plug-ins/GMic/lib"
+                "-archdatadir", "/app/extensions/GMic/lib"
             ],
             "sources": [
                 {
