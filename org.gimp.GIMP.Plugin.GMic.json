@@ -1,9 +1,9 @@
 {
     "id": "org.gimp.GIMP.Plugin.GMic",
-    "branch": "2-40",
+    "branch": "3",
     "runtime": "org.gimp.GIMP",
-    "runtime-version": "stable",
-    "sdk": "org.gnome.Sdk//46",
+    "runtime-version": "beta",
+    "sdk": "org.gnome.Sdk//47",
     "build-extension": true,
     "build-options": {
         "prefix": "/app/extensions/GMic",
@@ -21,8 +21,13 @@
             ],
             "no-make-install": true,
             "subdir": "gmic-qt",
+            "config-opts": [
+                "-DGMIC_QT_HOST=gimp3",
+                "-DENABLE_SYSTEM_GMIC=OFF",
+                "-DCMAKE_BUILD_TYPE=Release"
+            ],
             "post-install": [
-                "install -Dm755 gmic_gimp_qt -t ${FLATPAK_DEST}/plug-ins/",
+                "install -Dm755 gmic_gimp_qt -t ${FLATPAK_DEST}/plug-ins/gmic_gimp_qt",
                 "install -Dm644 ../org.gimp.GIMP.Plugin.GMic.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo/",
                 "install -Dm644 -t $FLATPAK_DEST/share/licenses/gmic COPYING"
             ],

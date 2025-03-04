@@ -52,35 +52,35 @@
                 "strip ${FLATPAK_DEST}/lib/*.so.5.*",
                 "strip ${FLATPAK_DEST}/lib/plugins/*/*.so"
             ],
-            "config-opts": [ "-confirm-license", "-opensource",
-                             "-shared",
-                             "-release", "-strip",
-                             "-platform", "linux-g++",
-                             "-optimized-qmake",
-                             "-nomake", "examples",
-                             "-nomake", "tests",
-                             "-system-harfbuzz",
-                             "-system-sqlite",
-                             "-accessibility",
-                             "-dbus-linked",
-                             "-fontconfig",
-                             "-glib",
-                             "-icu",
-                             "-openssl-linked",
-                             "-no-cups",
-                             "-no-pch",
-                             "-no-rpath",
-                             "-no-directfb",
-                             "-no-linuxfb",
-                             "-no-kms",
-                             "-no-feature-sql",
-                             "-no-feature-testlib",
-                             "-system-proxies",
-                             "-gtk",
-                             "-no-use-gold-linker",
-                             "-qpa", "xcb",
-                             "-archdatadir", "/app/extensions/GMic/lib"
-                           ],
+            "config-opts": [
+                "-confirm-license", "-opensource",
+                "-shared",
+                "-release", "-strip",
+                "-platform", "linux-g++",
+                "-optimized-qmake",
+                "-nomake", "examples",
+                "-nomake", "tests",
+                "-system-harfbuzz",
+                "-system-sqlite",
+                "-accessibility",
+                "-dbus-linked",
+                "-fontconfig",
+                "-glib",
+                "-icu",
+                "-openssl-linked",
+                "-no-cups",
+                "-no-pch",
+                "-no-rpath",
+                "-no-directfb",
+                "-no-linuxfb",
+                "-no-kms",
+                "-no-feature-sql",
+                "-no-feature-testlib",
+                "-system-proxies",
+                "-gtk",
+                "-no-use-gold-linker",
+                "-archdatadir", "/app/extensions/GMic/lib"
+            ],
             "sources": [
                 {
                     "type": "git",
@@ -109,6 +109,34 @@
                         "./configure.qt $processed"
                     ],
                     "dest-filename": "configure"
+                }
+            ]
+        },
+        {
+            "name": "qt5-wayland",
+            "buildsystem": "qmake",
+            "cleanup": [
+                "/bin",
+                "/include",
+                "/lib/cmake",
+                "/lib/mkspecs",
+                "/lib/pkgconfig",
+                "*.la"
+            ],
+            "cleanup-platform": [
+		"/bin",
+		"/mkspecs"
+	    ],
+            "post-install": [
+                "strip ${FLATPAK_DEST}/lib/plugins/wayland-*/*.so",
+                "strip ${FLATPAK_DEST}/lib/plugins/platforms/libqwayland*.so",
+                "strip ${FLATPAK_DEST}/lib/libQt5Wayland*.so.5.15.3"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "http://download.qt.io/archive/qt/5.15/5.15.3/submodules/qtwayland-everywhere-opensource-src-5.15.3.tar.xz",
+                    "sha256": "686ada6c5525bfa7f39aa37e2a811a381374c2c4137a7d9883a19ff24209240b"
                 }
             ]
         }
