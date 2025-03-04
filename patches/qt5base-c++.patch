@@ -1,0 +1,11 @@
+--- qt5-qtbase/src/corelib/text/qbytearraymatcher.h-orig	2022-03-23 21:27:20.847321310 -0400
++++ qt5-qtbase/src/corelib/text/qbytearraymatcher.h	2022-03-23 21:27:41.646481849 -0400
+@@ -40,6 +40,8 @@
+ #ifndef QBYTEARRAYMATCHER_H
+ #define QBYTEARRAYMATCHER_H
+ 
++#include <limits>
++
+ #include <QtCore/qbytearray.h>
+ 
+ QT_BEGIN_NAMESPACE
