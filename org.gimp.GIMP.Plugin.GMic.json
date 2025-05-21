@@ -2,8 +2,8 @@
     "id": "org.gimp.GIMP.Plugin.GMic",
     "branch": "3",
     "runtime": "org.gimp.GIMP",
-    "runtime-version": "beta",
-    "sdk": "org.gnome.Sdk//47",
+    "runtime-version": "stable",
+    "sdk": "org.gnome.Sdk//48",
     "build-extension": true,
     "build-options": {
         "prefix": "/app/extensions/GMic",
@@ -16,9 +16,6 @@
         {
             "name": "gmic",
             "buildsystem": "cmake-ninja",
-            "config-opts": [
-                "-DENABLE_SYSTEM_GMIC=OFF"
-            ],
             "no-make-install": true,
             "subdir": "gmic-qt",
             "config-opts": [
@@ -34,10 +31,10 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gmic.eu/get_file.php?file=source/gmic_3.5.2.tar.gz",
+                    "url": "https://gmic.eu/get_file.php?file=source%2Fgmic_3.5.5.tar.gz",
                     "archive-type": "tar-gzip",
-                    "sha256": "5893b6e87a52792e12af2b51121465d6202a2310c2a751c5c9785910ff55dc14",
-                    "x-data-checker": {
+                    "sha256": "f77999dbb6cd95e2766a0fa1c6ea3ec61007a981ff4644cba2cfba895ec1dff3",
+                    "x-checker-data": {
                         "type": "anitya",
                         "project-id": 10217,
                         "is-main-source": true,
