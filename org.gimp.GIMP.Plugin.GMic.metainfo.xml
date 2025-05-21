@@ -10,6 +10,7 @@
   <update_contact>hub_AT_figuiere.net</update_contact>
   <developer_name>G'MIC developers</developer_name>
   <releases>
+    <release date="2025-05-20" version="3.5.5" />
     <release date="2025-01-29" version="3.5.2" />
     <release date="2025-01-27" version="3.5.1" />
     <release date="2024-12-31" version="3.5.0" />
