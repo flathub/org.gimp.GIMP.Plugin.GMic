@@ -10,40 +10,43 @@
   <update_contact>hub_AT_figuiere.net</update_contact>
   <developer_name>G'MIC developers</developer_name>
   <releases>
-    <release date="2025-05-20" version="3.5.5" />
-    <release date="2025-01-29" version="3.5.2" />
-    <release date="2025-01-27" version="3.5.1" />
-    <release date="2024-12-31" version="3.5.0" />
-    <release date="2024-10-11" version="3.4.3" />
-    <release date="2024-09-26" version="3.4.2" />
-    <release date="2024-08-27" version="3.4.1" />
-    <release date="2024-06-17" version="3.4.0" />
-    <release date="2024-05-14" version="3.3.6" />
-    <release date="2024-03-12" version="3.3.5" />
-    <release date="2024-02-19" version="3.3.4" />
-    <release date="2024-01-12" version="3.3.3" />
-    <release date="2023-10-05" version="3.3.1" />
-    <release date="2023-09-04" version="3.3.0" />
-    <release date="2023-06-27" version="3.2.6" />
-    <release date="2023-05-30" version="3.2.5" />
-    <release date="2023-04-27" version="3.2.4" />
-    <release date="2023-04-04" version="3.2.3" />
-    <release date="2023-03-17" version="3.2.2" />
-    <release date="2023-02-15" version="3.2.1" />
-    <release date="2023-01-16" version="3.2.0" />
-    <release date="2022-08-31" version="3.1.6" />
-    <release date="2022-06-30" version="3.1.5" />
-    <release date="2022-06-21" version="3.1.4" />
-    <release date="2022-06-16" version="3.1.3" />
-    <release date="2022-05-13" version="3.1.2" />
-    <release date="2022-04-26" version="3.1.0" />
-    <release date="2022-01-19" version="3.0.2" />
-    <release date="2022-01-13" version="3.0.1" />
-    <release date="2021-12-09" version="3.0.0" />
-    <release date="2021-09-03" version="2.9.9" />
-    <release date="2021-07-16" version="2.9.8" />
-    <release date="2021-04-07" version="2.9.7" />
-    <release date="2021-02-09" version="2.9.6" />
+    <release version="3.6.0" date="2025-08-22">
+      <description></description>
+    </release>
+    <release date="2025-05-20" version="3.5.5"/>
+    <release date="2025-01-29" version="3.5.2"/>
+    <release date="2025-01-27" version="3.5.1"/>
+    <release date="2024-12-31" version="3.5.0"/>
+    <release date="2024-10-11" version="3.4.3"/>
+    <release date="2024-09-26" version="3.4.2"/>
+    <release date="2024-08-27" version="3.4.1"/>
+    <release date="2024-06-17" version="3.4.0"/>
+    <release date="2024-05-14" version="3.3.6"/>
+    <release date="2024-03-12" version="3.3.5"/>
+    <release date="2024-02-19" version="3.3.4"/>
+    <release date="2024-01-12" version="3.3.3"/>
+    <release date="2023-10-05" version="3.3.1"/>
+    <release date="2023-09-04" version="3.3.0"/>
+    <release date="2023-06-27" version="3.2.6"/>
+    <release date="2023-05-30" version="3.2.5"/>
+    <release date="2023-04-27" version="3.2.4"/>
+    <release date="2023-04-04" version="3.2.3"/>
+    <release date="2023-03-17" version="3.2.2"/>
+    <release date="2023-02-15" version="3.2.1"/>
+    <release date="2023-01-16" version="3.2.0"/>
+    <release date="2022-08-31" version="3.1.6"/>
+    <release date="2022-06-30" version="3.1.5"/>
+    <release date="2022-06-21" version="3.1.4"/>
+    <release date="2022-06-16" version="3.1.3"/>
+    <release date="2022-05-13" version="3.1.2"/>
+    <release date="2022-04-26" version="3.1.0"/>
+    <release date="2022-01-19" version="3.0.2"/>
+    <release date="2022-01-13" version="3.0.1"/>
+    <release date="2021-12-09" version="3.0.0"/>
+    <release date="2021-09-03" version="2.9.9"/>
+    <release date="2021-07-16" version="2.9.8"/>
+    <release date="2021-04-07" version="2.9.7"/>
+    <release date="2021-02-09" version="2.9.6"/>
     <release date="2021-02-05" version="2.9.5">
       <description>
         <p>New features:</p>
