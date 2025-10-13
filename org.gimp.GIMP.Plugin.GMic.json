@@ -31,9 +31,9 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gmic.eu/get_file.php?file=source%2Fgmic_3.6.2.tar.gz",
+                    "url": "https://gmic.eu/get_file.php?file=source%2Fgmic_3.6.3.tar.gz",
                     "archive-type": "tar-gzip",
-                    "sha256": "e85161d5eaf6eb413c2db6bc397c487617cea7916f21bce7a3b6acfa001fbf46",
+                    "sha256": "45304f179f2200ba527c819bd911bd6a85c4a4999740c730c7ccdd164ce240ac",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 10217,
