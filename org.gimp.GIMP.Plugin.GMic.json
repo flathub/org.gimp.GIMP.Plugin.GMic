@@ -11,8 +11,91 @@
         "prepend-pkg-config-path": "/app/extensions/GMic/lib/pkgconfig",
         "prepend-ld-library-path": "/app/extensions/GMic/lib"
     },
+    "cleanup": [
+        "/bin",
+        "/doc",
+        "/mkspecs",
+        "/lib/cmake",
+        "/lib/libexec",
+        "/lib/pkgconfig",
+        "/lib/objects-Release",
+        "/include",
+        "*.a",
+        "*.prl"
+    ],
     "modules": [
-        "qt5.json",
+        {
+            "name": "qt6-qtbase",
+            "cleanup": [
+                "/bin",
+                "/lib/libQt6Test.*",
+                "/lib/libQt6Sql.*",
+                "/lib/plugins/sqldrivers/libqsqlite.so",
+                "/lib/libQt6PrintSupport.*",
+                "/lib/plugins/printsupport/libcupsprintersupport.so"
+            ],
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DINSTALL_LIBDIR=/app/extensions/GMic/lib",
+                "-DINSTALL_ARCHDATADIR=lib",
+                "-DQT_DISABLE_RPATH=ON",
+                "-DBUILD_WITH_PCH=FALSE",
+                "-DQT_FEATURE_openssl_linked=ON",
+                "-DQT_FEATURE_system_sqlite=ON"
+            ],
+            "post-install": [
+                "find $FLATPAK_DEST/lib -name \\*.so -exec strip {} \\;"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.qt.io/official_releases/qt/6.10/6.10.3/submodules/qtbase-everywhere-src-6.10.3.tar.xz",
+                    "sha256": "383dc907816338f0cba72088a524c07458dfc69ce684ca9132fcc4fe91c24b0b"
+                },
+                {
+                    "type": "patch",
+                    "paths": [
+                        "patches/qtbase-find_package-paths.patch",
+                        "patches/qtbase-use-adwaita-decorations-on-gnome-by-default.patch"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "qt6-qttools",
+            "buildsystem": "cmake-ninja",
+            "cleanup": [
+                "*"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.qt.io/official_releases/qt/6.10/6.10.3/submodules/qttools-everywhere-src-6.10.3.tar.xz",
+                    "sha256": "8f00b9e3d1f80973d81cff67684972b89993183ef19924404d5b8ff0f89675b6"
+                }
+            ]
+        },
+        {
+            "name": "qt6-wayland",
+            "buildsystem": "cmake-ninja",
+            "cleanup": [
+                "/bin"
+            ],
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release"
+            ],
+            "post-install": [
+                "find $FLATPAK_DEST/lib -name \\*.so -exec strip {} \\;"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.qt.io/official_releases/qt/6.10/6.10.3/submodules/qtwayland-everywhere-src-6.10.3.tar.xz",
+                    "sha256": "2e93322a86b562113cfa3a5f0aa8b1e4e185d6284af49b529578d27d52ca85d3"
+                }
+            ]
+        },
         {
             "name": "gmic",
             "buildsystem": "cmake-ninja",
@@ -20,6 +103,7 @@
             "subdir": "gmic-qt",
             "config-opts": [
                 "-DGMIC_QT_HOST=gimp3",
+                "-DBUILD_WITH_QT6=ON",
                 "-DENABLE_SYSTEM_GMIC=OFF",
                 "-DCMAKE_BUILD_TYPE=Release"
             ],
