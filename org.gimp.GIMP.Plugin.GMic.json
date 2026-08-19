@@ -114,9 +114,9 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gmic.eu/get_file.php?file=source%2Fgmic_4.0.3.tar.gz",
+                    "url": "https://gmic.eu/get_file.php?file=source%2Fgmic_4.0.4.tar.gz",
                     "archive-type": "tar-gzip",
-                    "sha256": "40384654ac667c8c5d86543a1b6bf6d239fb9788d76ad671325e63ac36a5f82b",
+                    "sha256": "5ffa4a17e1ab70d586c1d53e32a438c8279d7b8b88bcb1af62dfabf48173bd10",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 10217,
