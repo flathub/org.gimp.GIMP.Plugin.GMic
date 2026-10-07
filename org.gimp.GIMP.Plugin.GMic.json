@@ -3,7 +3,7 @@
     "branch": "3",
     "runtime": "org.gimp.GIMP",
     "runtime-version": "stable",
-    "sdk": "org.gnome.Sdk//50",
+    "sdk": "org.gnome.Sdk//51",
     "build-extension": true,
     "build-options": {
         "prefix": "/app/extensions/GMic",
